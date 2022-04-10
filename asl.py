@@ -256,12 +256,6 @@ def main():
                 # Process text input
                 doc = nlp(text) # Run the pipeline on text input
 
-                print ("""
-                ┌─┐┌─┐┬─┐┌─┐┌─┐┬─┐┌┬┐  ┌┬┐┬─┐┌─┐┌┐┌┌─┐┬  ┌─┐┌┬┐┬┌─┐┌┐┌
-                ├─┘├┤ ├┬┘├┤ │ │├┬┘│││   │ ├┬┘├─┤│││└─┐│  ├─┤ │ ││ ││││
-                ┴  └─┘┴└─└  └─┘┴└─┴ ┴   ┴ ┴└─┴ ┴┘└┘└─┘┴─┘┴ ┴ ┴ ┴└─┘┘└┘
-                """)
-
                 for sentence in doc.sentences:
                 
                     translation = translate(sentence)
@@ -270,12 +264,6 @@ def main():
                     for word in translation[0]:
                         result.append((word['text'].lower(), word['lemma'].lower()))
                     print("\nResult: ", result, "\n")
-
-                    print ("""
-                ┌─┐┌─┐┬    ┬─┐┌─┐┌─┐┬─┐┌─┐┌─┐┌─┐┌┐┌┌┬┐┌─┐┌┬┐┬┌─┐┌┐┌
-                ├─┤└─┐│    ├┬┘├┤ ├─┘├┬┘├┤ └─┐├┤ │││ │ ├─┤ │ ││ ││││
-                ┴ ┴└─┘┴─┘  ┴└─└─┘┴  ┴└─└─┘└─┘└─┘┘└┘ ┴ ┴ ┴ ┴ ┴└─┘┘└┘
-                    """)
                     display(translation)
 
                 return doc
@@ -463,12 +451,6 @@ def main():
 
             while not flag:
                 # Get text
-                print ("""
-            ┌─┐┌─┐┌┬┐┬ ┬┌─┐┬─┐  ┌─┐┌─┐┌─┐┌─┐┌─┐┬ ┬
-            │ ┬├─┤ │ ├─┤├┤ ├┬┘  └─┐├─┘├┤ ├┤ │  ├─┤
-            └─┘┴ ┴ ┴ ┴ ┴└─┘┴└─  └─┘┴  └─┘└─┘└─┘┴ ┴
-                """)
-
                 tests = [
                 # "Where is the bathroom?",
                 # "What is your name?",
@@ -487,12 +469,6 @@ def main():
                     print("No speech detected... Reattempting.")
                 else:
                     for text in tests:
-                        print ("""
-                ┌─┐┌┐┌┌─┐┬ ┬ ┬┌─┐┌─┐  ┌─┐┌┐┌┌─┐┬  ┬┌─┐┬ ┬
-                ├─┤│││├─┤│ └┬┘└─┐├┤   ├┤ ││││ ┬│  │└─┐├─┤
-                ┴ ┴┘└┘┴ ┴┴─┘┴ └─┘└─┘  └─┘┘└┘└─┘┴─┘┴└─┘┴ ┴
-                        """)
-
                         print("Text to process: ", text, "\n")
 
                         parse(text)
